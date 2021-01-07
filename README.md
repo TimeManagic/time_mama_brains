@@ -18,6 +18,9 @@
 ### 2. 本地dev
 本地dev可以采用flask run方式运行
 
+`flask run` 普通调试  
+`flask run --debugger --reload` 热加载输出日志调试  
+
 ## 依赖约定
 
 本项目采用的是Flask框架,所使用的依赖应该以Flask为核心的扩展或周边依赖即可;
