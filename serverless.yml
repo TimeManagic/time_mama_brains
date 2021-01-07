@@ -1,0 +1,24 @@
+org: '1251010218'
+app: time-ama-python
+stage: dev
+component: flask
+name: flask-8zRoOO90q
+inputs:
+  region: ap-guangzhou
+  runtime: Python3.6
+  src:
+    hook: pip install -r requirements.txt -t ./
+    dist: ./
+    exclude:
+      - .env
+  functionConf:
+    eip: true
+    timeout: 12
+    memorySize: 256
+  apigatewayConf:
+    serviceTimeout: 60
+    autoCreateDns: false
+    protocols:
+      - http
+      - https
+    environment: release
