@@ -1,6 +1,5 @@
-/*
-!/time_mama_brains/
-!/tests/
-!/bin/
 .env
-
+.*/
+.*
+!.gitignore
+/requirements/
