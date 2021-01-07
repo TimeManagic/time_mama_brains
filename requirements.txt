@@ -3,3 +3,4 @@ werkzeug==0.16.0
 sqlalchemy
 psycopg2
 flask_sqlalchemy
+psycopg2-binary
