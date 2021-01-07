@@ -15,7 +15,10 @@
 
 `pip install -r requirements.txt -t .`
 
-### 2. 依赖约定
+### 2. 本地dev
+本地dev可以采用flask run方式运行
+
+## 依赖约定
 
 本项目采用的是Flask框架,所使用的依赖应该以Flask为核心的扩展或周边依赖即可;
 尽量保持项目简单轻量
@@ -24,12 +27,12 @@
 `flask`
 `flask_sqlalchemy`
 
-### 3. 代码结构
+## 代码结构
 
 代码结构依旧遵循sls规范,根目录下仅保留一个app.py用于调用入口;
 其余代码应放到time_mama_brains中
 
-### 4. 文件结构
+## 文件结构
 
 .env    --  用于存放环境变量,一般用于部署阶段  
 .gitignore  --  git 配置  
@@ -37,9 +40,9 @@ app.py  --  程序入口
 requirements.txt    --  依赖描述(所有依赖都需要在此描述后再安装)  
 serverless.yml  --  自动部署配置文件  
 
-### 5. 其他
+## 其他
 
-#### 5.1 数据库
+### 5.1 数据库
 
 本项目基于腾讯云的Serverless云函数形式托管部署运行,数据库也采用sls形式实现;  
 数据库采用postgres实例,链接驱动采用了pg8000  
