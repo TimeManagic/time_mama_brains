@@ -1,24 +1,15 @@
-import os
 from datetime import datetime
-
-from sqlalchemy import Column, Integer, String, DateTime
 
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import Column, Integer, String, DateTime
+from time_mama_brains.config import configure, ConfigEnv
 
 app = Flask(__name__)
+config = configure(ConfigEnv.DEV)
 
-# 读取配置
-app.config[
-    'SQLALCHEMY_DATABASE_URI'] = 'postgresql://tencentdb_3501ozmp:o3b%7C!82ax%7BKcG4U@10.0.0.14:5432/tencentdb_3501ozmp'
-# app.config[
-#     'SQLALCHEMY_DATABASE_URI'] = 'postgresql://tencentdb_3501ozmp:o3b%7C!82ax%7BKcG4U@postgres-3501ozmp.sql.tencentcdb.com:50140/tencentdb_3501ozmp'
-# 设置sqlalchemy自动更跟踪数据库
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-# 查询时会显示原始SQL语句
-app.config['SQLALCHEMY_ECHO'] = True
-# 禁止自动提交数据处理
-app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = False
+app.config.update(config)
+
 # 创建数据库sqlalchemy工具对象
 db = SQLAlchemy(app)
 
@@ -29,7 +20,7 @@ class User(db.Model):
     __tablename__ = 'sys_access_user'
 
     # 表的结构:
-    id = Column(Integer, primary_key=True, autoincrement=True,nullable=True)
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=True)
     name = Column(String(20))
     ip = Column(String(20))
     created_at = Column(DateTime())

@@ -27,8 +27,12 @@
 尽量保持项目简单轻量
 
 项目中现已安装了
-`flask`
-`flask_sqlalchemy`
+
+`flask` [flask 1.1.1]('https://dormousehole.readthedocs.io/en/latest/index.html')
+
+`flask_sqlalchemy` [flask_sqlalchemy]('https://flask-sqlalchemy.palletsprojects.com/en/2.x/')
+
+
 
 ## 代码结构
 
